@@ -33,7 +33,7 @@ const greaterThanSeven = (e) => {
     return undefined
 }
 
-console.log(arr1.filter(greaterThanSeven))
+// console.log(arr1.filter(greaterThanSeven))
 
 
 // Reduce
