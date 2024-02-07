@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Bubling</title>
+    <style>
+        .child {
+            background: aliceblue;
+            border: 2px solid black;
+            padding: 30px;
+            margin: 30px;
+            cursor: pointer;
+        }
+        .child-container {
+            background: aliceblue;
+            border: 2px solid black;
+            padding: 30px;
+            margin: 30px;
+            cursor: pointer;
+        }
+        .container {
+            background: aliceblue;
+            border: 2px solid black;
+            padding: 30px;
+            margin: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        I am Container
+        <section class="child-container">
+            I am Child-Container
+            <div class="child">
+                I am Child
+            </div>
+        </section>
+    </div>
+    <script>
+        document.querySelector(".child").addEventListener("click", (e) => {
+            alert("Child was clicked")
+            e.stopPropagation()  // Stop next propagations
+        })
+
+        document.querySelector(".child-container").addEventListener("click", () => {
+            alert("Child-Container was clicked")
+        })
+
+        document.querySelector(".container").addEventListener("click", () => {
+            alert("Container was clicked")
+        })
+    </script>
+</body>
+</html>
