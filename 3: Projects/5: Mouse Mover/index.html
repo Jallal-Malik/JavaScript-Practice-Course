@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Mover</title>
+    <style>
+        #div {
+            background-color: coral;
+            padding: 16px;
+            text-align: center;
+        }
+        #Written-number {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Mouse Mover</h1>
+
+    <div id="div"><b>If you move your mouse in this coral color box you see the random numbers below this box.</b>
+        <p>Click "Remove" to remove the event handler.</p>
+        <p>Click "Start" to start the event handler.</p>
+        <!-- <button onclick="removeHandler()">Remove</button> -->
+        <button id = "remove">Remove</button>
+        <button id = "start">Start</button>
+      </div>
+
+      <p id="Written-number"></p>
+
+      <script>
+        const myDiv = document.getElementById("div");
+        myDiv.addEventListener("mousemove", myFunction);
+
+        // written-number handle
+
+        function myFunction() {
+            document.getElementById("Written-number").innerHTML = Math.random();
+        }
+
+        // remove handle
+
+        // function removeHandler() {
+        //     myDiv.removeEventListener("mousemove", myFunction);
+        // }
+        document.getElementById("remove").addEventListener("click", () => {
+            myDiv.removeEventListener("mousemove", myFunction)
+        })
+
+        // start handle
+
+        document.getElementById("start").addEventListener("click", () => {
+            myDiv.addEventListener("mousemove", myFunction)
+        })
+      </script>
+</body>
+</html>
