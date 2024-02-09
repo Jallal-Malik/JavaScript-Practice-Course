@@ -9,11 +9,11 @@ let arr1 = [1, 2, 3, 44, 56]
 
 // Map
 
-// let newArr = arr1.map(e => { // This is map. Map returns a new Array.
-//     return e
-// })
+let newArr = arr1.map(e => { // This is map. Map returns a new Array.
+    return e
+})
 
-// console.log(newArr)
+console.log(newArr)
 
 
 // Filter
